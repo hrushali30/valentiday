@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bacchu ❤️ Sweetheart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    width: 340px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    animation: pop 1s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    color: #ff2e63;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #444;
+    font-size: 15px;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 22px;
+    border-radius: 30px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yes {
+    background: #ff2e63;
+    color: white;
+}
+
+#yes:hover {
+    background: #e6004c;
+}
+
+#no {
+    background: #ddd;
+    color: #333;
+    position: relative;
+}
+
+.heart {
+    position: absolute;
+    animation: float 5s linear infinite;
+    color: #ff2e63;
+}
+
+.photo-frame {
+    position: relative;
+    text-align: center;
+    font-size: 22px;
+    margin-top: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+.photo-frame img {
+    width: 60%;
+    border-radius: 25px;
+    border: 5px solid #ff2e63;
+    box-shadow: 0 0 25px rgba(255, 0, 100, 0.6);
+    padding: 10px;
+    background: white;
+}
+
+@keyframes glow {
+    from { transform: scale(1); }
+    to { transform: scale(1.03); }
+}
+
+
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+    <h1>💖 Happy valentine Day Bacchu!...❤️ </h1>
+    <p>
+        Bacchu, this heart beats a little faster for you…<br>
+        Sweetheart, will you be my forever Valentine? 💌
+    </p>
+
+    <button id="yes" onclick="yesClicked()">Yes 💕</button>
+    <button id="no" onmouseover="moveNo()">No </button>
+
+    
+
+</div>
+
+<script>
+function yesClicked() {
+    document.getElementById("card").innerHTML = `
+        <h1>💘 Yayyy! 💘</h1>
+        <p>
+         Sweetheart 💑<br>
+           actaully i want to say i'm a mad for you, please do not make a space between us anyway. i'm always for you dear!...❤️<br><br>
+        Happy Valentine’s Day 🌹
+
+<div class="photo-frame">
+   
+    <img src="love.jpg" alt="Bacchu & Sweetheart">
+    ✨🌹💖  
+</div>
+
+        </p>
+        
+    `;
+}
+
+function moveNo() {
+    let btn = document.getElementById("no");
+    btn.style.left = Math.random() * 120 - 60 + "px";
+    btn.style.top = Math.random() * 120 - 60 + "px";
+}
+
+// Floating hearts
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    heart.style.fontSize = (16 + Math.random() * 24) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 5000);
+}, 250);
+</script>
+
+</body>
+</html>
